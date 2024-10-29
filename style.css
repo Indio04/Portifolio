@@ -200,20 +200,6 @@ img{
     position: absolute;
 }
 
-.complemento-sobre {
-    width: auto;
-    z-index: 0;
-}
-
-.complemento-sobre img {
-    position: relative;
-    left: 50px;
-    top: 50px;
-    width: 90%;
-    z-index: 1000;
-    animation: rotate 20s linear infinite;
-}
-
 @keyframes rotate {
     from {
         transform: rotate(0deg);
