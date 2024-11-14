@@ -4,12 +4,12 @@ function scrollToDiv(divId) {
     });
 }
 
-document.getElementById('Sobre_mim').addEventListener('click', function() {
-    scrollToDiv('SobreMim');
+document.getElementById('Sobre_Nos').addEventListener('click', function() {
+    scrollToDiv('SobreNos');
 });
 
-document.getElementById('tecnologias').addEventListener('click', function() {
-    scrollToDiv('Tecnologias');
+document.getElementById('Servicos').addEventListener('click', function() {
+    scrollToDiv('Serviços');
 });
 
 document.getElementById('Contato').addEventListener('click', function() {
