@@ -42,7 +42,7 @@ html {
 header{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
     height: 70px;
     background-color: #000000;
@@ -108,7 +108,7 @@ img{
 }
 
 .headline-scroll span {
-    font-family: #f6f6f6;
+    font-family: var(--font-grande);
     font-size: 5rem;
     text-transform: uppercase;
     display: flex;
@@ -118,19 +118,19 @@ img{
 .headline-scroll .divisor {
     width: 20px;
     height: 20px;
-    background-color: #9c9d9d;
+    background-color: var(--color-gray2);
     border-radius: 50%;
     margin: 0 20px;
 }
 
 .headline-scroll .bold {
     font-weight: bold;
-    color: #f6f6f6;
+    color: var(--color-white);
 }
 
 .headline-scroll .light {
     font-weight: lighter;
-    color: #9c9d9d;
+    color: var(--color-gray2);
 }
 
 .conteudo-sobre {
@@ -142,7 +142,7 @@ img{
 }
 
 .left-sobre {
-    color: #f6f6f6;
+    color: var(--color-white);
     height: 100%;
     width: 50%;
     display: flex;
@@ -154,12 +154,12 @@ img{
 
 .textos-sobre h1 {
     font-size: 3rem;
-    font-family: 'TT Hoves Pro Trial', sans-serif;
+    font-family: var(--font-grande);
 }
 
 .textos-sobre p {
     font-size: 1.5rem;
-    color: #9c9d9d;
+    color: var(--color-gray2);
     font-weight: 500;
     line-height: 1.4;
     letter-spacing: 1.5px;
@@ -178,7 +178,7 @@ img{
     display: flex;
     justify-content: space-between;
     text-decoration: none;
-    color: #9c9d9d;
+    color: var(--color-gray2);
     font-size: 1.5rem;
     width: 100%;
     padding-bottom: 5px;
@@ -200,23 +200,16 @@ img{
     position: absolute;
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
+.imagem-sobre img{
+	border-radius: 35%;
+	margin-top: -200px;
+	margin-left: -150px;
+	width: 330px;
 }
 
-.imagem-sobre img {
-    width: 90%;
-    z-index: 99;
-}
-
-.Tecnologias{
-    background-color: #ffebcd;
+.Serviços{
+    background-color: #000000;
+	color: #ffffff;
     width: 100%;
     height: 100vh;
     display: flex;
