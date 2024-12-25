@@ -337,7 +337,7 @@ header img{
 .inicio,
 .SobreNos,
 .Serviços,
-.Contatos{
+.Tecnologia{
 	color: #ffffff;
     background-color: #000000;
     width: 100%;
@@ -485,7 +485,7 @@ header img{
 .imagem-sobre img{
 	border-radius: 35%;
 	margin-top: 0px;
-	margin-left: -150px;
+	margin-left: -20px;
 	width: 330px;
 }
 

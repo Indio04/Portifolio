@@ -12,8 +12,8 @@ document.getElementById('Servicos').addEventListener('click', function() {
     scrollToDiv('Serviços');
 });
 
-document.getElementById('Contato').addEventListener('click', function() {
-    scrollToDiv('Contatos');
+document.getElementById('Tecnologias').addEventListener('click', function() {
+    scrollToDiv('Tecnologia');
 });
 
 function scrollToTop() {
