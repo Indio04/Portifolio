@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaria: #30343f;
+    --secundaria: #fafaff;
+    --terciaria: #e4d9ff;
+    --escuro: #273469;
+    --maisEscuro: #1e2749;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--terciaria);
+    color: var(--claro);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 2rem;
+    background-color: var(--secundaria);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    display: block;
+}
+
+.navegacao{
+    position: relative;
+    background: transparent;
+    padding: 0;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.menu a {
+    color: var(--claro);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--vidro);
+}
+
+.menu-link{
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem;
+}
+
+.menu-link::after{
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria), #3c3d3f);
+    transition: width 0.5s ease;
+}
+
+.menu-link:hover::after{
+    width: 100%;
+}
+
+main, section:first-of-type {
+    margin-top: 100px;
+}
