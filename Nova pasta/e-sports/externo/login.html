@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - NexusGG</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Definir variáveis CSS caso o style.css não carregue corretamente */
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #00cec9;
+            --accent-color: #fd79a8;
+            --dark-bg: #0f1923;
+            --darker-bg: #080e14;
+            --light-text: #f1f1f1;
+            --gray-text: #a0a0a0;
+            --card-bg: #1a2634;
+            --gradient-primary: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+            --gradient-secondary: linear-gradient(135deg, #00cec9 0%, #81ecec 100%);
+            --gradient-accent: linear-gradient(135deg, #fd79a8 0%, #fab1a0 100%);
+            --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .auth-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(8, 14, 20, 0.9), rgba(8, 14, 20, 0.9)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        }
+        
+        .auth-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .auth-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+        
+        .auth-logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .auth-logo h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .auth-logo span {
+            color: var(--primary-color);
+        }
+        
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .auth-form .form-group {
+            margin-bottom: 0;
+        }
+        
+        .auth-form input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--light-text);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .auth-form input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2);
+        }
+        
+        .auth-submit {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .auth-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+        }
+        
+        .auth-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .auth-links a {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .auth-separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+            color: var(--gray-text);
+        }
+        
+        .auth-separator::before,
+        .auth-separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .auth-separator::before {
+            margin-right: 10px;
+        }
+        
+        .auth-separator::after {
+            margin-left: 10px;
+        }
+        
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .social-btn.google {
+            color: #ea4335;
+        }
+        
+        .social-btn.facebook {
+            color: #3b5998;
+        }
+        
+        .social-btn.twitter {
+            color: #1da1f2;
+        }
+        
+        .auth-message {
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: none;
+        }
+        
+        .auth-message.error {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+            border: 1px solid rgba(231, 76, 60, 0.3);
+        }
+        
+        .auth-message.success {
+            background-color: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-logo">
+                <h1>NEXUS<span>GG</span></h1>
+                <p>Entre na sua conta</p>
+            </div>
+            
+            <div id="auth-message" class="auth-message"></div>
+            
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="E-mail" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="Senha" required>
+                </div>
+                <button type="submit" class="auth-submit">Entrar</button>
+            </form>
+            
+            <div class="auth-links">
+                <a href="#">Esqueceu sua senha?</a>
+                <p>Não tem uma conta? <a href="register.html">Registre-se</a></p>
+            </div>
+            
+            <div class="auth-separator">ou entre com</div>
+            
+            <div class="social-login">
+                <a href="#" class="social-btn google"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            
+            <div class="auth-links" style="margin-top: 30px;">
+                <a href="../index.html"><i class="fas fa-arrow-left"></i> Voltar para a página inicial</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('login-form');
+            const authMessage = document.getElementById('auth-message');
+            
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                // Validar campos
+                if (!email || !password) {
+                    showMessage('Por favor, preencha todos os campos', 'error');
+                    return;
+                }
+                
+                // Desabilitar botão durante o envio
+                const submitBtn = this.querySelector('.auth-submit');
+                const originalBtnText = submitBtn.textContent;
+                submitBtn.textContent = 'Processando...';
+                submitBtn.disabled = true;
+                
+                // Enviar dados para o servidor
+                fetch('main.php?action=login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Restaurar botão
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                    
+                    if (data.success) {
+                        showMessage('Login realizado com sucesso! Redirecionando...', 'success');
+                        
+                        // Armazenar dados do usuário no localStorage
+                        localStorage.setItem('user', JSON.stringify(data.user));
+                        localStorage.setItem('isLoggedIn', 'true');
+                        
+                        // Redirecionar após 1 segundo
+                        setTimeout(() => {
+                            window.location.href = 'index.html';
+                        }, 1000);
+                    } else {
+                        showMessage(data.message || 'Erro ao fazer login', 'error');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    showMessage('Erro ao conectar com o servidor', 'error');
+                    
+                    // Restaurar botão
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+            });
+            
+            // Função para mostrar mensagens
+            function showMessage(message, type) {
+                authMessage.textContent = message;
+                authMessage.className = 'auth-message ' + type;
+                authMessage.style.display = 'block';
+                
+                // Scroll para a mensagem
+                authMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    </script>
+</body>
+</html>

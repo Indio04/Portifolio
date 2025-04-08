@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusGG - Portal de E-Sports</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>NEXUS<span>GG</span></h1>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#tournaments">Torneios</a></li>
+                    <li><a href="#teams">Times</a></li>
+                    <li><a href="#news">Notícias</a></li>
+                    <li><a href="#streams">Streams</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="externo/login.html" class="login-btn">Login</a>
+                <a href="externo/register.html" class="register-btn">Registrar</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>DOMINE A <span>ARENA</span></h1>
+                <p>Participe dos maiores torneios de e-sports, acompanhe seus times favoritos e fique por dentro de todas as novidades do mundo competitivo.</p>
+                <div class="hero-buttons">
+                    <button onclick="window.scrollToSection('tournaments')" class="primary-btn">Ver Torneios</button>
+                    <button onclick="window.location.href='externo/register.html'" class="secondary-btn">Criar Conta</button>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Torneios</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Jogadores</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">R$100K</span>
+                        <span class="stat-label">Em Prêmios</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-decoration">
+                <div class="glow-circle"></div>
+                <div class="floating-icons">
+                    <i class="fas fa-gamepad"></i>
+                    <i class="fas fa-trophy"></i>
+                    <i class="fas fa-headset"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured-games">
+        <div class="container">
+            <h2 class="section-title">JOGOS EM DESTAQUE</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-img" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');">
+                        <div class="game-overlay">
+                            <h3>League of Legends</h3>
+                            <a href="#" class="game-btn">Ver Torneios</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-img" style="background-image: url('https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');">
+                        <div class="game-overlay">
+                            <h3>CS:GO</h3>
+                            <a href="#" class="game-btn">Ver Torneios</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-img" style="background-image: url('https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');">
+                        <div class="game-overlay">
+                            <h3>Valorant</h3>
+                            <a href="#" class="game-btn">Ver Torneios</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-img" style="background-image: url('https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');">
+                        <div class="game-overlay">
+                            <h3>Dota 2</h3>
+                            <a href="#" class="game-btn">Ver Torneios</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tournaments">
+        <div class="container">
+            <h2 class="section-title">PRÓXIMOS TORNEIOS</h2>
+            <div class="tournaments-list" id="tournaments-container">
+                <!-- Torneios serão carregados via JavaScript/PHP -->
+                <div class="loading">Carregando torneios...</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="teams">
+        <div class="container">
+            <h2 class="section-title">TIMES PROFISSIONAIS</h2>
+            <div class="teams-grid">
+                <div class="team-card">
+                    <div class="team-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/FURIA_logo.png" alt="Logo FURIA Esports">
+                    </div>
+                    <div class="team-info">
+                        <h3>FURIA Esports</h3>
+                        <p class="team-game">CS:GO, Valorant</p>
+                        <p class="team-description">Uma das maiores organizações de esports do Brasil, com equipes de destaque em diversos jogos.</p>
+                        <a href="#" class="team-btn">Ver Perfil</a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Pain_Gaming_logo.png" alt="Logo paiN Gaming">
+                    </div>
+                    <div class="team-info">
+                        <h3>paiN Gaming</h3>
+                        <p class="team-game">League of Legends, Free Fire</p>
+                        <p class="team-description">Uma das organizações mais tradicionais do cenário brasileiro, com história em diversos títulos.</p>
+                        <a href="#" class="team-btn">Ver Perfil</a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/LOUD_logo.png" alt="Logo LOUD">
+                    </div>
+                    <div class="team-info">
+                        <h3>LOUD</h3>
+                        <p class="team-game">Valorant, Free Fire</p>
+                        <p class="team-description">Organização que revolucionou o cenário de esports no Brasil, unindo gaming e entretenimento.</p>
+                        <a href="#" class="team-btn">Ver Perfil</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news">
+        <div class="container">
+            <h2 class="section-title">ÚLTIMAS NOTÍCIAS</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Notícia E-sports">
+                        <span class="news-category">League of Legends</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Mundial 2023: Conheça todos os times classificados</h3>
+                        <p class="news-date">12 de Outubro, 2023</p>
+                        <p class="news-excerpt">O Campeonato Mundial de League of Legends 2023 está se aproximando e todas as equipes já estão definidas...</p>
+                        <a href="#" class="read-more">Ler mais</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Notícia E-sports">
+                        <span class="news-category">CS:GO</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Major de Berlim: FURIA e MIBR representam o Brasil</h3>
+                        <p class="news-date">10 de Outubro, 2023</p>
+                        <p class="news-excerpt">As equipes brasileiras FURIA e MIBR garantiram suas vagas para o próximo Major de CS:GO que acontecerá em Berlim...</p>
+                        <a href="#" class="read-more">Ler mais</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Notícia E-sports">
+                        <span class="news-category">Valorant</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Novo agente de Valorant é revelado pela Riot Games</h3>
+                        <p class="news-date">8 de Outubro, 2023</p>
+                        <p class="news-excerpt">A Riot Games revelou o mais novo agente de Valorant que promete revolucionar a meta atual do jogo...</p>
+                        <a href="#" class="read-more">Ler mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="streams">
+        <div class="container">
+            <h2 class="section-title">STREAMS AO VIVO</h2>
+            <div class="streams-grid">
+                <div class="stream-card">
+                    <div class="stream-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1561736778-92e52a7769ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Stream">
+                        <div class="live-badge">AO VIVO</div>
+                        <div class="viewers">12.5K espectadores</div>
+                    </div>
+                    <div class="stream-info">
+                        <div class="streamer-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Streamer">
+                        </div>
+                        <div class="streamer-details">
+                            <h3>Campeonato Brasileiro de LoL - Semifinais</h3>
+                            <p>CBLOL Oficial</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stream-card">
+                    <div class="stream-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1542751371-6533d324da9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Stream">
+                        <div class="live-badge">AO VIVO</div>
+                        <div class="viewers">8.3K espectadores</div>
+                    </div>
+                    <div class="stream-info">
+                        <div class="streamer-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Streamer">
+                        </div>
+                        <div class="streamer-details">
+                            <h3>Treinando para o próximo torneio - Valorant</h3>
+                            <p>Ana_Pro</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stream-card">
+                    <div class="stream-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1548484352-ea579e5233a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Stream">
+                        <div class="live-badge">AO VIVO</div>
+                        <div class="viewers">5.7K espectadores</div>
+                    </div>
+                    <div class="stream-info">
+                        <div class="streamer-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Streamer">
+                        </div>
+                        <div class="streamer-details">
+                            <h3>CS:GO - Jogando com inscritos</h3>
+                            <p>GameMaster</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>ENTRE PARA A COMUNIDADE</h2>
+                <p>Crie sua conta agora e participe de torneios exclusivos, receba notificações sobre seus jogos favoritos e conecte-se com outros jogadores.</p>
+                <form id="register-form" class="register-form">
+                    <div class="form-group">
+                        <input type="text" id="username" name="username" placeholder="Nome de usuário" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Senha" required>
+                    </div>
+                    <button type="submit" class="register-submit">Criar Conta</button>
+                </form>
+                <p class="login-link">Já tem uma conta? <a href="login.html">Faça login</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>NEXUS<span>GG</span></h2>
+                    <p>Sua plataforma completa de e-sports</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Links Rápidos</h3>
+                        <ul>
+                            <li><a href="#hero">Home</a></li>
+                            <li><a href="#tournaments">Torneios</a></li>
+                            <li><a href="#teams">Times</a></li>
+                            <li><a href="#news">Notícias</a></li>
+                            <li><a href="#streams">Streams</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Jogos</h3>
+                        <ul>
+                            <li><a href="#">League of Legends</a></li>
+                            <li><a href="#">CS:GO</a></li>
+                            <li><a href="#">Valorant</a></li>
+                            <li><a href="#">Dota 2</a></li>
+                            <li><a href="#">Fortnite</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Suporte</h3>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Contato</a></li>
+                            <li><a href="#">Termos de Serviço</a></li>
+                            <li><a href="#">Política de Privacidade</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h3>Siga-nos</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitch"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 NexusGG. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
