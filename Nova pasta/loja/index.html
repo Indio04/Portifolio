@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODA STYLE | Loja de Roupas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <h1>MODA<span>STYLE</span></h1>
+                </div>
+                
+                <nav class="nav-menu">
+                    <ul class="menu">
+                        <li><a href="#hero" class="active">Home</a></li>
+                        <li><a href="#new-collection">Novidades</a></li>
+                        <li class="dropdown">
+                            <a href="#categories">Categorias <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#women">Feminino</a></li>
+                                <li><a href="#men">Masculino</a></li>
+                                <li><a href="#accessories">Acessórios</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#trending">Tendências</a></li>
+                        <li><a href="#sale">Promoções</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-toggle">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="user-account">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="cart-toggle">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <div class="mobile-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="container">
+            <form class="search-form">
+                <input type="text" placeholder="O que você está procurando?">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <button class="close-search"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be added dynamically -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Seu carrinho está vazio</p>
+                <a href="#new-collection" class="btn btn-primary">Comprar Agora</a>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">R$ 0,00</span>
+            </div>
+            <a href="#checkout" class="btn btn-primary checkout-btn">Finalizar Compra</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h2 class="animate-text delay-1">Nova Coleção</h2>
+                            <h1 class="animate-text delay-2">Verão 2023</h1>
+                            <p class="animate-text delay-3">Descubra as últimas tendências da moda com nossa nova coleção de verão. Peças exclusivas para você arrasar na estação mais quente do ano.</p>
+                            <a href="#new-collection" class="btn btn-primary animate-text delay-4">Comprar Agora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h2>Promoção Especial</h2>
+                            <h1>Até 50% OFF</h1>
+                            <p>Aproveite descontos incríveis em peças selecionadas. Renove seu guarda-roupa com estilo e economia.</p>
+                            <a href="#sale" class="btn btn-primary">Ver Ofertas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h2>Coleção Exclusiva</h2>
+                            <h1>Outono/Inverno</h1>
+                            <p>Prepare-se para as estações mais frias com nossa coleção exclusiva. Peças sofisticadas e confortáveis para todos os momentos.</p>
+                            <a href="#new-collection" class="btn btn-primary">Descobrir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+            <div class="slide-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+            <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Categorias</h2>
+                <p>Explore nossas categorias e encontre seu estilo</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-item">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Moda Feminina">
+                    </div>
+                    <div class="category-content">
+                        <h3>Feminino</h3>
+                        <a href="#women" class="btn btn-light">Ver Coleção</a>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Moda Masculina">
+                    </div>
+                    <div class="category-content">
+                        <h3>Masculino</h3>
+                        <a href="#men" class="btn btn-light">Ver Coleção</a>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Acessórios">
+                    </div>
+                    <div class="category-content">
+                        <h3>Acessórios</h3>
+                        <a href="#accessories" class="btn btn-light">Ver Coleção</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Collection Section -->
+    <section id="new-collection" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nova Coleção</h2>
+                <p>As últimas tendências para você</p>
+            </div>
+            <div class="products-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="women">Feminino</button>
+                <button class="filter-btn" data-filter="men">Masculino</button>
+                <button class="filter-btn" data-filter="accessories">Acessórios</button>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-category="women">
+                    <span class="product-badge new">Novo</span>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Vestido Floral">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="quick-view"><i class="far fa-eye"></i></button>
+                            <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido Floral Verão</h3>
+                        <div class="product-price">
+                            <span class="current-price">R$ 159,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="men">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1550246140-5119ae4790b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Camisa Social">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="quick-view"><i class="far fa-eye"></i></button>
+                            <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Camisa Social Slim</h3>
+                        <div class="product-price">
+                            <span class="current-price">R$ 129,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="women">
+                    <span class="product-badge sale">-20%</span>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551163943-3f7fffb84859?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Blusa Feminina">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="quick-view"><i class="far fa-eye"></i></button>
+                            <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Blusa Manga Longa</h3>
+                        <div class="product-price">
+                            <span class="current-price">R$ 89,90</span>
+                            <span class="old-price">R$ 112,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1590548784585-643d2b9f2925?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Bolsa de Couro">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="quick-view"><i class="far fa-eye"></i></button>
+                            <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bolsa de Couro Elegante</h3>
+                        <div class="product-price">
+                            <span class="current-price">R$ 199,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="men">
+                    <span class="product-badge new">Novo</span>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Jaqueta Jeans">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="quick-view"><i class="far fa-eye"></i></button>
+                            <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Jaqueta Jeans Vintage</h3>
+                        <div class="product-price">
+                            <span class="current-price">R$ 249,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="women">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Calça Jeans">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="quick-view"><i class="far fa-eye"></i></button>
+                            <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Calça Jeans Skinny</h3>
+                        <div class="product-price">
+                            <span class="current-price">R$ 139,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <span>(3.5)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="accessories">
+                    <span class="product-badge sale">-15%</span>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Óculos de Sol">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="quick-view"><i class="far fa-eye"></i></button>
+                            <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Óculos de Sol Premium</h3>
+                        <div class="product-price">
+                            <span class="current-price">R$ 169,90</span>
+                            <span class="old-price">R$ 199,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="men">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tênis Casual">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="quick-view"><i class="far fa-eye"></i></button>
+                            <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tênis Casual Urbano</h3>
+                        <div class="product-price">
+                            <span class="current-price">R$ 219,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="#" class="btn btn-outline">Ver Mais Produtos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section id="trending" class="trending">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tendências</h2>
+                <p>O que está em alta agora</p>
+            </div>
+            <div class="trending-grid">
+                <div class="trending-item large">
+                    <div class="trending-image">
+                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Tendência de Moda">
+                    </div>
+                    <div class="trending-content">
+                        <span class="trending-tag">Destaque</span>
+                        <h3>Estilo Minimalista</h3>
+                        <p>Descubra a elegância na simplicidade com nossa coleção minimalista.</p>
+                        <a href="#" class="btn btn-light">Explorar</a>
+                    </div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-image">
+                        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tendência de Moda">
+                    </div>
+                    <div class="trending-content">
+                        <span class="trending-tag">Popular</span>
+                        <h3>Cores Vibrantes</h3>
+                        <a href="#" class="btn btn-light">Ver Mais</a>
+                    </div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-image">
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tendência de Moda">
+                    </div>
+                    <div class="trending-content">
+                        <span class="trending-tag">Novo</span>
+                        <h3>Estampas Florais</h3>
+                        <a href="#" class="btn btn-light">Ver Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sale Section -->
+    <section id="sale" class="sale">
+        <div class="container">
+            <div class="section-header">
+                <h2>Promoções</h2>
+                <p>Ofertas especiais por tempo limitado</p>
+            </div>
+            <div class="sale-banner">
+                <div class="sale-content">
+                    <h2>MEGA PROMOÇÃO</h2>
+                    <h3>Até 50% OFF</h3>
+                    <p>Em produtos selecionados. Aproveite enquanto durar o estoque!</p>
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">00</span>
+                            <span class="countdown-label">Dias</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">Horas</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">Minutos</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label">Segundos</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">Comprar Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section id="instagram" class="instagram">
+        <div class="container">
+            <div class="section-header">
+                <h2>Instagram</h2>
+                <p>Siga-nos @modastyle</p>
+            </div>
+            <div class="instagram-grid">
+                <a href="#" class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1475180098004-ca77a66827be?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Inscreva-se na nossa Newsletter</h2>
+                <p>Receba novidades, promoções exclusivas e dicas de moda diretamente no seu e-mail.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu endereço de e-mail" required>
+                    <button type="submit" class="btn btn-primary">Inscrever-se</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column about">
+                    <h3>MODA<span>STYLE</span></h3>
+                    <p>Sua loja de moda online com as últimas tendências e estilos para todos os gostos.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#new-collection">Novidades</a></li>
+                        <li><a href="#categories">Categorias</a></li>
+                        <li><a href="#trending">Tendências</a></li>
+                        <li><a href="#sale">Promoções</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column links">
+                    <h3>Informações</h3>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Termos e Condições</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo, SP</p>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@modastyle.com</p>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 MODASTYLE. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quick-view-modal">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="product-quick-view">
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Produto">
+                    </div>
+                    <div class="thumbnail-images">
+                        <div class="thumbnail active">
+                            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Thumbnail">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Thumbnail">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Thumbnail">
+                        </div>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h2>Vestido Floral Verão</h2>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(4.0)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">R$ 159,90</span>
+                    </div>
+                    <div class="product-description">
+                        <p>Vestido floral perfeito para o verão, confeccionado em tecido leve e confortável. Ideal para ocasiões casuais e passeios ao ar livre.</p>
+                    </div>
+                    <div class="product-variations">
+                        <div class="variation-group">
+                            <label>Tamanho:</label>
+                            <div class="variation-options size">
+                                <button class="variation-option">P</button>
+                                <button class="variation-option active">M</button>
+                                <button class="variation-option">G</button>
+                                <button class="variation-option">GG</button>
+                            </div>
+                        </div>
+                        <div class="variation-group">
+                            <label>Cor:</label>
+                            <div class="variation-options color">
+                                <button class="variation-option" style="background-color: #f8b195;"></button>
+                                <button class="variation-option active" style="background-color: #f67280;"></button>
+                                <button class="variation-option" style="background-color: #c06c84;"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                            <input type="number" value="1" min="1" max="10">
+                            <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <button class="btn btn-primary add-to-cart-btn"><i class="fas fa-shopping-bag"></i> Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product-meta">
+                        <p><span>Categoria:</span> <a href="#">Feminino</a>, <a href="#">Vestidos</a></p>
+                        <p><span>Tags:</span> <a href="#">verão</a>, <a href="#">floral</a>, <a href="#">casual</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
